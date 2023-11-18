@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Responsive Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar{
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .left{
+            width: 80%;
+        }
+        .right{
+            width: 20%;
+            text-align: right;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            margin-left: 15px;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+        }
+        .fa-solid{
+            margin-right: 10px;
+            font-size: 20px;
+            color: white;
+            margin-left: 25px;
+            padding: 10px;
+            display: none;
+        }
+        @media only screen and (max-width: 650px) {
+            .hide{
+                display: none;
+            }
+            ul li{
+                font-size: 15px;
+            }
+            .fa-solid{
+                display: block;
+            }
+        }
+        @media only screen and (max-width: 590px) {
+    
+            ul li{
+                font-size: 15px;
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+        @media only screen and (max-width: 490px) {
+    
+            ul li{
+                font-size: 15px;
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+        @media only screen and (max-width: 390px) {
+    
+            ul li{
+                font-size: 10px;
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <div class="left">
+            <ul class="hide">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bars" onclick="showhideNav()"></i>
+        </div>
+    </div>
+    <script>
+        function showhideNav(){
+            if(document.getElementsByClassName('fa-solid')[0].classList[1] == 'fa-bars'){
+                document.getElementsByTagName('ul')[0].classList.remove('hide');
+                document.getElementsByClassName('fa-solid')[0].classList.remove('fa-bars');
+                document.getElementsByClassName('fa-solid')[0].classList.add('fa-circle-xmark');
+            }else{
+                document.getElementsByTagName('ul')[0].classList.add('hide');
+                document.getElementsByClassName('fa-solid')[0].classList.remove('fa-circle-xmark');
+                document.getElementsByClassName('fa-solid')[0].classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
